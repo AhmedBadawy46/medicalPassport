@@ -3,7 +3,7 @@ for details on configuring this project to bundle and minify static web assets. 
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color:#f8f9f9
+    background-color: #f8f9f9
 }
 
 /* Wrapping element */
@@ -36,3 +36,26 @@ body {
         display: none;
     }
 }
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+    .table > tbody > tr > td.color1 {
+        background-color: #577F92;
+        color: white
+    }
+    .table > tbody > tr > td.color2 {
+        background-color: #513e63;
+        color: white
+    }
+    .table > tbody > tr > td.color3 {
+        background-color: #A2B9B2;
+        color: white
+    }
+
+    .table > tbody > tr > td.color4 {
+        background-color: #f6b067;
+        color: white
+    }
+

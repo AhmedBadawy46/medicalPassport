@@ -98,4 +98,23 @@ let changeContent = (() => {
 
         });
     })
+
+    let Doctor_Schedule = $('#Doctor_Schedule')
+    Doctor_Schedule.on('click', () => {
+        x.empty()
+        $.ajax({
+            type: "Get",
+            data: {
+            },
+            url: '/Doctors/profile/GetScheduleData',
+
+            success: function (response) {
+                x.append(response)
+            },
+            failure: function (errMsg) {
+                console.log("error")
+            }
+
+        });
+    })
 })()
