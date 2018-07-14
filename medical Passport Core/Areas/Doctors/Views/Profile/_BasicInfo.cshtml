@@ -1,0 +1,115 @@
+﻿<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">Specialities</div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span>
+                        Cardiologist
+                    </span>
+                    <a class="btn btn-danger btn-xs pull-right">Remove</a>
+
+                </li>
+                <li class="list-group-item">
+                    <span>
+                        Dermatologist
+                    </span>
+                    <a class="btn btn-danger btn-xs pull-right">Remove</a>
+                </li>
+                <li class="list-group-item">
+                    <span>
+                        Nephrologist
+                    </span>
+                    <a class="btn btn-danger btn-xs pull-right">Remove</a>
+                </li>
+            </ul>
+            <button class="btn btn-primary pull-right">add speciality</button>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Languages</div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span>
+                        Arabic
+                    </span>
+                    <a class="btn btn-danger btn-xs pull-right">Remove</a>
+
+                </li>
+                <li class="list-group-item">
+                    <span>
+                        English
+                    </span>
+                    <a class="btn btn-danger btn-xs pull-right">Remove</a>
+                </li>
+                <li class="list-group-item">
+                    <span>
+                        Frensh
+                    </span>
+                    <a class="btn btn-danger btn-xs pull-right">Remove</a>
+                </li>
+            </ul>
+            <button class="btn btn-primary pull-right">add language</button>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Insurance</div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span>
+                        Company 1
+                    </span>
+                    <a class="btn btn-danger btn-xs pull-right">Remove</a>
+
+                </li>
+                <li class="list-group-item">
+                    <span>
+                        Company 2
+                    </span>
+                    <a class="btn btn-danger btn-xs pull-right">Remove</a>
+                </li>
+
+            </ul>
+            <button class="btn btn-primary pull-right">add Insurance</button>
+        </div>
+    </div>
+    <div>
+        <!-- Nav tabs -->
+        <ul id="myTabs" class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#Ar" aria-controls="Ar" role="tab" data-toggle="tab">Ar</a></li>
+            <li role="presentation"><a href="#En" aria-controls="En" role="tab" data-toggle="tab">En</a></li>
+            <li role="presentation"><a href="#Fr" aria-controls="Fr" role="tab" data-toggle="tab">Fr</a></li>
+            <li role="presentation"><a href="#" aria-controls="Fr" role="tab" data-toggle="tab">Add Other Data</a></li>
+        </ul>
+
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="Ar">
+                <div id="AfficiationDiv">
+                    <div class="form-group">
+                        <label for="Affiliation">Affiliations</label>
+                        <textarea type="text" class="form-control" id="Affiliation" name="Affiliation">Affiliations Data</textarea>
+                    </div>
+                </div>
+                <div id="NoteDiv">
+                    <div id="AfficiationDiv">
+                        <div class="form-group">
+                            <label for="notes">Notes</label>
+                            <textarea type="text" class="form-control" id="notes" name="notes">Notes Data</textarea>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary pull-right">Update Data</button>
+
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="En">En</div>
+            <div role="tabpanel" class="tab-pane" id="Fr">Fr</div>
+        </div>
+    </div>
+</div>

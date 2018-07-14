@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/js/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
+<style>
+    .sideDiv {
+        background-color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        border: 1px solid #d5d8dc;
+        border-radius: 5px;
+        margin-bottom: 20px
+    }
+
+        .sideDiv > h3 {
+            margin-top: 0px;
+        }
+</style>
+
+<h2>profile Data</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="sideDiv">
+            <h3>profile data</h3>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="#">Notification</a></li>
+                <li class="active" id="basicDataLi"><a href="#">Edit Profile</a></li>
+                <li id="healthTackLi"><a href="#">Health Tracking</a></li>
+                <li id="familyLi"><a href="#">Family</a></li>
+                <li id="IDoctorLi"><a href="#">I am a Doctor</a></li>
+
+            </ul>
+        </div>
+
+        <div class="sideDiv">
+            <h3>Doctor Data</h3>
+            <ul class="nav nav-pills nav-stacked">
+                <li id="Doctor_BasicInfo"><a href="#">Basic Info</a></li>
+                <li id="Doctor_Facility"><a href="#">Facilities</a></li>
+                <li><a href="#">My Schedule</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6 sideDiv" id="contentDiv">
+        <div class="table-responsive">
+            <
+        </div>
+
+        @*<partial name="_BasicData" />*@
+
+    </div>
+    <div class="col-md-3">
+        <div class="sideDiv" style="height:200px">
+            <h3>profile data</h3>
+            
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/DataTable/jquery.dataTables.min.js"></script>
+    <script src="~/js/DataTable/base_tables_datatables.js"></script>
+    <script src="~/js/Profile/ProfileScript.js"></script>
+
+}
+
