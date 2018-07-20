@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<link href="~/js/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
+<div class="row" style="margin:20px">
+    <a href="/Drugs/Admin/AddNewSubstance" class="btn btn-default">Add New Drug</a>
+</div>
+<div class="table-responsive">
+    <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+        <br />
+        <div class="col-sm-12">
+            <table class="table table-bordered js-dataTable-full dataTable no-footer" id="DataTables_Table" role="grid" aria-describedby="DataTables_Table_1_info" width="100%">
+                <thead>
+                    <tr role="row">
+                        <th class="text-center">
+                            Substance Name
+                        </th>
+                        <th class="text-center">
+                            Side Effect
+                        </th>
+                        <th class="text-center">
+                            Food Interaction
+                        </th>
+                        <th class="text-center">
+                            Treatment Disease
+                        </th>
+                        <th class="text-center">
+                            Interact Disease
+                        </th>
+                        <th class="text-center">
+                            Interact Substance
+                        </th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="theTbody">
+                    <tr role="row">
+                        <td class="text-center">
+                            Substance 1
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary sideEffect">View</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary foodInteraction">View</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary treatmentDisease">View</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary interactDisease">View</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary interactSubstance">View</button>
+                        </td>
+                    </tr>
+                    <tr role="row">
+                        <td class="text-center">
+                            substance 2
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary sideEffect">View</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary foodInteraction">View</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary treatmentDisease">View</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary interactDisease">View</button>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-primary interactSubstance">View</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/DataTable/jquery.dataTables.min.js"></script>
+    <script src="~/js/DataTable/base_tables_datatables.js"></script>
+    <script>
+        let viewSubstanceData = (() => {
+            //Get side Effect data
+            $('#DataTables_Table tbody').on('click', 'button.sideEffect', function () {
+                var tr = $(this).closest('tr');
+                var nextTr = tr.next('tr')
+                //check if the data is opened before
+                if (nextTr.hasClass('details')) {
+                    nextTr.remove()
+                } else {
+                    //we will get the data from server using Ajax
+                    tr.after(`<tr class="details"><td colspan="6">side Effect 1</td></tr>`);
+                }
+            });
+
+            //Get Food Intraction data
+            $('#DataTables_Table tbody').on('click', 'button.foodInteraction', function () {
+                var tr = $(this).closest('tr');
+                var nextTr = tr.next('tr')
+                //check if the data is opened before
+                if (nextTr.hasClass('details')) {
+                    nextTr.remove()
+                } else {
+                    //we will get the data from server using Ajax
+                    tr.after(`<tr class="details"><td colspan="6">Food 1 <br/> Food 2</td></tr>`);
+                }
+            });
+
+            //Get Treatment Disease data
+            $('#DataTables_Table tbody').on('click', 'button.treatmentDisease', function () {
+                var tr = $(this).closest('tr');
+                var nextTr = tr.next('tr')
+                //check if the data is opened before
+                if (nextTr.hasClass('details')) {
+                    nextTr.remove()
+                } else {
+                    //we will get the data from server using Ajax
+                    tr.after(`<tr class="details"><td colspan="6">Disease 1 <br/> Disease 2</td></tr>`);
+                }
+            });
+
+            //Get Treatment Disease data
+            $('#DataTables_Table tbody').on('click', 'button.interactDisease', function () {
+                var tr = $(this).closest('tr');
+                var nextTr = tr.next('tr')
+                //check if the data is opened before
+                if (nextTr.hasClass('details')) {
+                    nextTr.remove()
+                } else {
+                    //we will get the data from server using Ajax
+                    tr.after(`<tr class="details"><td colspan="6">Disease 1 <br/> Disease 2</td></tr>`);
+                }
+            });
+
+            //Get Treatment Disease data
+            $('#DataTables_Table tbody').on('click', 'button.interactSubstance', function () {
+                var tr = $(this).closest('tr');
+                var nextTr = tr.next('tr')
+                //check if the data is opened before
+                if (nextTr.hasClass('details')) {
+                    nextTr.remove()
+                } else {
+                    //we will get the data from server using Ajax
+                    tr.after(`<tr class="details"><td colspan="6">substance 1 <br/> Substance 2</td></tr>`);
+                }
+            });
+        })()
+    </script>
+}

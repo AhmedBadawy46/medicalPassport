@@ -31,7 +31,7 @@ namespace medical_Passport_Core.Areas.Doctors.Controllers
 
         public IActionResult GetScheduleData()
         {
-            return PartialView("_ScheduleData");
+            return View("ScheduleData");
         }
     }
 }
