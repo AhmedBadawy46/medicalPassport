@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewData["Title"] = "DrugsIndex";
+}
+
+<link href="~/js/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
+<div class="row" style="margin:20px">
+    <a class="btn btn-default addNewDrug" data-toggle="modal" data-target="#addNewDrugModal">
+        Add New Drug
+    </a></div>
+<div class="table-responsive">
+    <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+        <br />
+        <div class="col-sm-12">
+            <table class="table table-bordered js-dataTable-full dataTable no-footer" id="DataTables_Table" role="grid" aria-describedby="DataTables_Table_1_info" width="100%">
+                <thead>
+                    <tr role="row">
+                        <th class="text-center">
+                            Drug Name
+                        </th>
+                        <th class="text-center">
+                            Languages
+                        </th>
+                        <th class="text-center">
+                            Details
+                        </th>
+                        <th class="text-center">
+                        </th>
+                        <th class="text-center">
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody id="theTbody">
+                    <tr role="row">
+                        <td class="text-center">
+                            Drug 1 
+                        </td>
+                        <td class="text-center">
+                            <a data-toggle="modal" data-target="#editMainData">En</a> - <a data-toggle="modal" data-target="#editMainData">Ar</a>
+                        </td>
+                        <td class="text-center">
+                            <button class="btn btn-link drugDetails">Details</button>
+                        </td>
+                        
+                        <td class="text-center">
+                            <a class="btn btn-link addOtherLang" data-toggle="modal" data-target="#myModal">
+                                add other language
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link remove-Link RemoveSubstance" data-toggle="modal" data-target="#myModal">
+                                Remove
+                            </a>
+                        </td>
+                    </tr>
+                    <tr role="row">
+                        <td class="text-center">
+                            Drug 2
+                        </td>
+                        <td class="text-center">
+                            <a data-toggle="modal" data-target="#editMainData">En</a> - <a data-toggle="modal" data-target="#editMainData">Ar</a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/Drugs/Admin/DrugDetails" class="btn btn-link drugDetails">Details</a>
+                        </td>
+
+                        <td class="text-center">
+                            <a class="btn btn-link addOtherLang" data-toggle="modal" data-target="#myModal">
+                                add other language
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link remove-Link RemoveSubstance" data-toggle="modal" data-target="#myModal">
+                                Remove
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Data with other Language</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Languages">
+                            Choose Language
+                        </label>
+                        <select id="Languages" name="Languages" class="form-control">
+                            <option>En</option>
+                            <option>Ar</option>
+                            <option>Fr</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Substance_Name">
+                            Drug Name
+                        </label>
+                        <input id="Substance_Name" name="Substance_Name" type="text" value="zzzz" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addNewDrugModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add New Drug</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="availability">
+                            Choose Availability
+                        </label>
+                        <select id="availability" name="availability" class="form-control">
+                            <option>Availability 1</option>
+                            <option>Availability 2</option>
+                            <option>Availability 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Control">
+                            Choose Control
+                        </label>
+                        <select id="Control" name="Control" class="form-control">
+                            <option>Control 1</option>
+                            <option>Control 2</option>
+                            <option>Control 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Company">
+                            Choose Company
+                        </label>
+                        <select id="Company" name="Company" class="form-control">
+                            <option>Company 1</option>
+                            <option>Company 2</option>
+                            <option>Company 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Substance_Name">
+                            Drug Name
+                        </label>
+                        <input id="Substance_Name" name="Substance_Name" type="text" value="zzzz" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="IsBrand">
+                            Is Brand
+                        </label>
+                        @Html.CheckBox("IsBrand")
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/js/DataTable/jquery.dataTables.min.js"></script>
+    <script src="~/js/DataTable/base_tables_datatables.js"></script>
+    
+}
+

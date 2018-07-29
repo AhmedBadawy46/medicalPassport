@@ -7,6 +7,7 @@
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/css/font-awesome.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
@@ -35,7 +36,8 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li><a asp-area="profile" asp-controller="MainData" asp-action="Index">Profile</a></li>
                     <li><a asp-area="Doctors" asp-controller="Profile" asp-action="GetScheduleData">Schedule</a></li>
-                    <li><a asp-area="Drugs" asp-controller="Admin" asp-action="Index">Drugs Admin</a></li>
+                    <li><a asp-area="Drugs" asp-controller="Admin" asp-action="Index">Substance Admin</a></li>
+                    <li><a asp-area="Drugs" asp-controller="Admin" asp-action="DrugsIndex">Drugs Admin</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

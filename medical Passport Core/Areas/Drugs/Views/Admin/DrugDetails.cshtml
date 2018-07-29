@@ -1,0 +1,705 @@
+﻿
+@{
+    ViewData["Title"] = "DrugDetails";
+}
+
+<link href="~/js/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
+<h2>Drug 1 Details</h2>
+<div class="row" style="margin:20px">
+    <a class="btn btn-default addNewPackage" data-toggle="modal" data-target="#addNewPackage">
+        Add New Package
+    </a>
+</div>
+<div class="table-responsive">
+    <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+        <br />
+        <div class="col-sm-12">
+            <table class="table table-bordered js-dataTable-full dataTable no-footer" id="DataTables_Table" role="grid" aria-describedby="DataTables_Table_1_info" width="100%">
+                <thead>
+                    <tr role="row">
+                        <th class="text-center">
+                            Form
+                        </th>
+                        <th class="text-center">
+                            Amount
+                        </th>
+                        <th class="text-center">
+                            Languages
+                        </th>
+                        <th class="text-center">
+                            Composition
+                        </th>
+                        <th class="text-center">
+                            Countries Data
+                        </th>
+
+                        <th class="text-center">
+                            Details
+                        </th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
+                    </tr>
+                </thead>
+                <tbody id="theTbody">
+                    <tr role="row">
+                        <td class="text-center">
+                            <a class="btn btn-link editForm" data-toggle="modal" data-target="#editModal">
+                                Form 1
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link editAmount" data-toggle="modal" data-target="#editModal">
+                                20 pills
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link editMainPackageLanguageData" data-toggle="modal" data-target="#editModal">
+                                En
+                            </a> -
+                            <a class="btn btn-link editMainPackageLanguageData" data-toggle="modal" data-target="#editModal">
+                                Ar
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-trash remove-Link"></i><a class="btn btn-link editSubstanceData" data-toggle="modal" data-target="#editModal">
+                                Substance 1 (con:50 ml - Amnt: 10 ml)
+                            </a>
+                            <br />
+                            <i class="fa fa-trash remove-Link"></i><a class="btn btn-link editSubstanceData" data-toggle="modal" data-target="#editModal">
+                                Substance 2 (con:20 ml - Amnt: 30 ml)
+                            </a>
+                            <br />
+                            <a class="btn btn-link addSubstanceToForm" data-toggle="modal" data-target="#addModal">
+                                add Substance
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <div class="row">
+                                <i class="fa fa-trash remove-Link"></i><a class="btn btn-link editSubstanceData" data-toggle="modal" data-target="#editModal">
+                                    Egypt
+                                </a>
+                                <i class="dropdown">
+                                    <a href="#" id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#addModal">
+                                                Add Other Language Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#editModal">
+                                                Edit Other Language Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#editModal">
+                                                View Language Data
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </i>
+                            </div>
+                            <div class="row">
+                                <i class="fa fa-trash remove-Link"></i><a class="btn btn-link editSubstanceData" data-toggle="modal" data-target="#editModal">
+                                    Bahrain
+                                </a>
+                                <i class="dropdown">
+                                    <a href="#" id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#addModal">
+                                                Add Other Language Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#editModal">
+                                                Edit Other Language Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#editModal">
+                                                View Language Data
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </i>
+                            </div>
+                            <a class="btn btn-link addCountryData" data-toggle="modal" data-target="#addModal">
+                                Add Country
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            <button class="btn btn-link drugDetails">Details</button>
+                        </td>
+
+                        <td class="text-center">
+                            <a class="btn btn-link addOtherLang" data-toggle="modal" data-target="#myModal">
+                                add other language
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link remove-Link RemoveSubstance" data-toggle="modal" data-target="#myModal">
+                                Remove
+                            </a>
+                        </td>
+                    </tr>
+                    <tr role="row">
+                        <td class="text-center">
+                            <a class="btn btn-link editForm" data-toggle="modal" data-target="#editModal">
+                                Form 2
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link editAmount" data-toggle="modal" data-target="#editModal">
+                                20 capsule
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link editMainPackageLanguageData" data-toggle="modal" data-target="#editModal">
+                                En
+                            </a> -
+                            <a class="btn btn-link editMainPackageLanguageData" data-toggle="modal" data-target="#editModal">
+                                Ar
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <i class="fa fa-trash remove-Link"></i><a class="btn btn-link editSubstanceData" data-toggle="modal" data-target="#editModal">
+                                Substance 1 (con:50 ml - Amnt: 10 ml)
+                            </a>
+                            <br />
+                            <i class="fa fa-trash remove-Link"></i><a class="btn btn-link editSubstanceData" data-toggle="modal" data-target="#editModal">
+                                Substance 2 (con:20 ml - Amnt: 30 ml)
+                            </a>
+                            <br />
+                            <a class="btn btn-link addSubstanceToForm" data-toggle="modal" data-target="#addModal">
+                                add Substance
+                            </a>
+
+                        </td>
+                        <td class="text-center">
+                            <div class="row">
+                                <i class="fa fa-trash remove-Link"></i><a class="btn btn-link editSubstanceData" data-toggle="modal" data-target="#editModal">
+                                    Egypt
+                                </a>
+                                <i class="dropdown">
+                                    <a href="#" id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#addModal">
+                                                Add Other Language Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#editModal">
+                                                Edit Other Language Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#editModal">
+                                                View Language Data
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </i>
+                            </div>
+                            <div class="row">
+                                <i class="fa fa-trash remove-Link"></i><a class="btn btn-link editSubstanceData" data-toggle="modal" data-target="#editModal">
+                                    Bahrain
+                                </a>
+                                <i class="dropdown">
+                                    <a href="#" id="dLabel" class="btn btn-link" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fa fa-globe" aria-hidden="true"></i>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#addModal">
+                                                Add Other Language Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#editModal">
+                                                Edit Other Language Data
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="addCountryLanguageData" data-toggle="modal" data-target="#editModal">
+                                                View Language Data
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </i>
+                            </div>
+                            <a class="btn btn-link addCountryData" data-toggle="modal" data-target="#addModal">
+                                Add Country
+                            </a>
+                        </td>
+
+                        <td class="text-center">
+                            <button class="btn btn-link drugDetails">Details</button>
+                        </td>
+
+                        <td class="text-center">
+                            <a class="btn btn-link addOtherLang" data-toggle="modal" data-target="#myModal">
+                                add other language
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link remove-Link RemoveSubstance" data-toggle="modal" data-target="#myModal">
+                                Remove
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Data with other Language</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Languages">
+                            Choose Language
+                        </label>
+                        <select id="Languages" name="Languages" class="form-control">
+                            <option>En</option>
+                            <option>Ar</option>
+                            <option>Fr</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Dose">
+                            Dose
+                        </label>
+                        <textarea id="Dose" name="Dose" value="zzzz" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="DoseInstruction">
+                            Dose Instruction
+                        </label>
+                        <textarea id="DoseInstruction" name="DoseInstruction" value="zzzz" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="TreatmentDuration">
+                            Treatment Duration
+                        </label>
+                        <textarea id="TreatmentDuration" name="TreatmentDuration" value="zzzz" class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addNewPackage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add New Package</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="form">
+                            Choose Form
+                        </label>
+                        <select id="form" name="form" class="form-control">
+                            <option>Form 1</option>
+                            <option>Form 2</option>
+                            <option>Form 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-2">
+                        <label for="Amount">
+                            Amount
+                        </label>
+                        <input id="Amount" name="Amount" type="number" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="AmountUnit">
+                            Choose Amount unit
+                        </label>
+                        <select id="AmountUnit" name="AmountUnit" class="form-control">
+                            <option>unit 1</option>
+                            <option>unit 2</option>
+                            <option>unit 3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Dose">
+                            Dose
+                        </label>
+                        <textarea id="Dose" name="Dose" value="zzzz" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="DoseInstruction">
+                            Dose Instruction
+                        </label>
+                        <textarea id="DoseInstruction" name="DoseInstruction" value="zzzz" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="TreatmentDuration">
+                            Treatment Duration
+                        </label>
+                        <textarea id="TreatmentDuration" name="TreatmentDuration" value="zzzz" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="row" id="Substances">
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <button class="btn btn-primary" id="addSubstance">Add Substance</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="modalTitle"></h4>
+            </div>
+            <div class="modal-body" id="mainContainer">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="addModalTitle"></h4>
+            </div>
+            <div class="modal-body" id="addMainContainer">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/DataTable/jquery.dataTables.min.js"></script>
+    <script src="~/js/DataTable/base_tables_datatables.js"></script>
+    <script>
+        let addSubstanceToNewPackage = (() => {
+            $('#addSubstance').click(function (e) {
+
+                e.preventDefault()
+                $('#Substances').append(`<div class="form-group col-md-3">
+                                    <label for="Substance">
+                                        Substance
+                                    </label>
+                                    <select id="Substance" name="Substance" class="form-control">
+                                        <option>Substance 1</option>
+                                        <option>Substance 2</option>
+                                        <option>Substance 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="Concentration">
+                                        Concent.
+                                    </label>
+                                    <input id="Concentration" name="Concentration" type="number" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="Concentration_unit">
+                                        unit
+                                    </label>
+                                    <select id="Concentration_unit" name="Concentration_unit" class="form-control">
+                                        <option>unit 1</option>
+                                        <option>unit 2</option>
+                                        <option>unit 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="perPackageAmount">
+                                        Amount
+                                    </label>
+                                    <input id="perPackageAmount" name="perPackageAmount" type="number" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="Per_Package_unit">
+                                       unit
+                                    </label>
+                                    <select id="Per_Package_unit" name="Per_Package_unit" class="form-control">
+                                        <option>unit 1</option>
+                                        <option>unit 2</option>
+                                        <option>unit 3</option>
+                                    </select>
+                                </div>`)
+
+            })
+        })()
+        let OpenEditFormModal = (() => {
+            $('.editForm').on('click', function (e) {
+                e.preventDefault()
+                $('#mainContainer').empty();
+                $('#modalTitle').empty();
+                $('#mainContainer').append(`<div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label for="form">
+                                            Choose Form
+                                        </label>
+                                        <select id="form" name="form" class="form-control">
+                                            <option>Form 1</option>
+                                            <option>Form 2</option>
+                                            <option>Form 3</option>
+                                        </select>
+                                    </div>
+                                </div>`);
+                $('#modalTitle').append("Edit Form")
+
+            })
+        })()
+        let OpenEditAmountModal = (() => {
+            $('.editAmount').on('click', function (e) {
+                e.preventDefault()
+                $('#mainContainer').empty();
+                $('#modalTitle').empty();
+                $('#mainContainer').append(`<div class="row">
+                                    <div class="form-group col-md-2">
+                                        <label for="Amount">
+                                            Amount
+                                        </label>
+                                        <input id="Amount" name="Amount" type="number" class="form-control" />
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="AmountUnit">
+                                            Choose Amount unit
+                                        </label>
+                                        <select id="AmountUnit" name="AmountUnit" class="form-control">
+                                            <option>unit 1</option>
+                                            <option>unit 2</option>
+                                            <option>unit 3</option>
+                                        </select>
+                                    </div>
+                                </div>`);
+                $('#modalTitle').append("Edit Amount")
+
+            })
+        })()
+        let OpenEditMainPackageLanguageDatatModal = (() => {
+            $('.editMainPackageLanguageData').on('click', function (e) {
+                e.preventDefault()
+                $('#mainContainer').empty();
+                $('#modalTitle').empty();
+                $('#mainContainer').append(`<div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="Dose">
+                                        Dose
+                                    </label>
+                                    <textarea id="Dose" name="Dose" value="zzzz" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="DoseInstruction">
+                                        Dose Instruction
+                                    </label>
+                                    <textarea id="DoseInstruction" name="DoseInstruction" value="zzzz" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="TreatmentDuration">
+                                        Treatment Duration
+                                    </label>
+                                    <textarea id="TreatmentDuration" name="TreatmentDuration" value="zzzz" class="form-control"></textarea>
+                                </div>
+                            </div>`);
+                $('#modalTitle').append("Edit Data of Language ( x )")
+
+            })
+        })()
+        let OpenAddNewSubstanceModal = (() => {
+            $('.addSubstanceToForm').on('click', function (e) {
+                e.preventDefault()
+                $('#addMainContainer').empty();
+                $('#addModalTitle').empty();
+                $('#addMainContainer').append(`<div class="row"><div class="form-group col-md-3">
+                                    <label for="Substance">
+                                        Substance
+                                    </label>
+                                    <select id="Substance" name="Substance" class="form-control">
+                                        <option>Substance 1</option>
+                                        <option>Substance 2</option>
+                                        <option>Substance 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="Concentration">
+                                        Concent.
+                                    </label>
+                                    <input id="Concentration" name="Concentration" type="number" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="Concentration_unit">
+                                        unit
+                                    </label>
+                                    <select id="Concentration_unit" name="Concentration_unit" class="form-control">
+                                        <option>unit 1</option>
+                                        <option>unit 2</option>
+                                        <option>unit 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="perPackageAmount">
+                                        Amount
+                                    </label>
+                                    <input id="perPackageAmount" name="perPackageAmount" type="number" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="Per_Package_unit">
+                                       unit
+                                    </label>
+                                    <select id="Per_Package_unit" name="Per_Package_unit" class="form-control">
+                                        <option>unit 1</option>
+                                        <option>unit 2</option>
+                                        <option>unit 3</option>
+                                    </select>
+                                </div></div>`);
+                $('#addModalTitle').append("Add New Substance")
+
+            })
+        })()
+        let OpenEditSubstanceDataModal = (() => {
+            $('.editSubstanceData').on('click', function (e) {
+                e.preventDefault()
+                $('#mainContainer').empty();
+                $('#modalTitle').empty();
+                $('#mainContainer').append(`
+                            <div class="row">
+                                <div class="form-group col-md-2">
+                                    <label for="Concentration">
+                                        Concent.
+                                    </label>
+                                    <input id="Concentration" name="Concentration" type="number" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="Concentration_unit">
+                                        unit
+                                    </label>
+                                    <select id="Concentration_unit" name="Concentration_unit" class="form-control">
+                                        <option>unit 1</option>
+                                        <option>unit 2</option>
+                                        <option>unit 3</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="perPackageAmount">
+                                        Amount
+                                    </label>
+                                    <input id="perPackageAmount" name="perPackageAmount" type="number" class="form-control" />
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="Per_Package_unit">
+                                       unit
+                                    </label>
+                                    <select id="Per_Package_unit" name="Per_Package_unit" class="form-control">
+                                        <option>unit 1</option>
+                                        <option>unit 2</option>
+                                        <option>unit 3</option>
+                                    </select>
+                                </div></div>`);
+                $('#modalTitle').append("Edit Substance Data")
+
+            })
+        })()
+        let OpenAddCountryDataModal = (() => {
+            $('.addCountryData').on('click', function (e) {
+                e.preventDefault()
+                $('#addMainContainer').empty();
+                $('#addModalTitle').empty();
+                $('#addMainContainer').append(`<div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="form">
+                                Picture
+                            </label>
+                            <input type="file" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="form">
+                                LeafLet
+                            </label>
+                            <input type="file" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="form">
+                                Price
+                            </label>
+                            <input type="number" min="0.00" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="form">
+                                Name Suffix (En)
+                            </label>
+                            <input type="text" class="form-control" />
+                        </div>
+                    </div>`);
+                $('#addModalTitle').append("Add New Country Data")
+
+            })
+        })()
+
+
+    </script>
+}
+
+

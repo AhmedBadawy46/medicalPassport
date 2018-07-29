@@ -6,39 +6,292 @@
 <h2>AddNewSubstance</h2>
 <h4>* All the data will be in English Language</h4>
 <div class="container">
-    <div class="row">
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="Substance_Name">
-                    Substance Name
-                </label>
-                <input id="Substance_Name" name="Substance_Name" type="text" value="zzzz" class="form-control" />
+    <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#mainData" aria-controls="mainData" role="tab" data-toggle="tab">Main Data</a></li>
+            <li role="presentation" class="disabled"><a href="#sideEffectTab" class="secondaryData_Tabs" aria-controls="sideEffectTab" role="tab" data-toggle="tab">Side Effects</a></li>
+            <li role="presentation" class="disabled"><a href="#foodInteraction" class="secondaryData_Tabs" aria-controls="foodInteraction" role="tab" data-toggle="tab">Food Interaction</a></li>
+            <li role="presentation" class="disabled"><a href="#treatmentDisease" class="secondaryData_Tabs" aria-controls="treatmentDisease" role="tab" data-toggle="tab">Treatment Disease</a></li>
+            <li role="presentation" class="disabled"><a href="#interactionDisease" class="secondaryData_Tabs" aria-controls="interactionDisease" role="tab" data-toggle="tab">Interaction Disease</a></li>
+            <li role="presentation" class="disabled"><a href="#interactionSubstance" class="secondaryData_Tabs" aria-controls="interactionSubstance" role="tab" data-toggle="tab">Interaction Substance</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="mainData">
+                <div class="container">
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="Substance_Name">
+                                Substance Name
+                            </label>
+                            <input id="Substance_Name" name="Substance_Name" type="text" value="zzzz" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="Pregnancy_Category">
+                                Pregnancy Category
+                            </label>
+                            <select id="Pregnancy_Category" name="Pregnancy_Category" class="form-control">
+                                <option>category 1</option>
+                                <option>category 2</option>
+                                <option>category 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="Pharmacological_Family">
+                                Pharmacological Family
+                            </label>
+                            <select id="Pharmacological_Family" name="Pharmacological_Family" class="form-control">
+                                <option>category 1</option>
+                                <option>category 2</option>
+                                <option>category 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="Ph_Patiant">
+                                Pharmacological Family Patiant Data
+                            </label>
+                            <textarea id="Ph_Patiant" name="Ph_Patiant" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="Ph_Professional">
+                                Pharmacological Family Professional Data
+                            </label>
+                            <textarea id="Ph_Professional" name="Ph_Professional" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="PregnancyPatiant">
+                                Pregnancy Patiant Data
+                            </label>
+                            <textarea id="PregnancyPatiant" name="PregnancyPatiant" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="PregnancyProfessional">
+                                Pregnancy Professional Data
+                            </label>
+                            <textarea id="PregnancyProfessional" name="PregnancyProfessional" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="LactationPatiant">
+                                Lactation Patiant Data
+                            </label>
+                            <textarea id="LactationPatiant" name="LactationPatiant" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="LactationProfessional">
+                                Lactation Professional Data
+                            </label>
+                            <textarea id="LactationProfessional" name="LactationProfessional" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="DosagePatiant">
+                                Dosage Patiant Data
+                            </label>
+                            <textarea id="DosagePatiant" name="DosagePatiant" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="DosageProfessional">
+                                Dosage Professional Data
+                            </label>
+                            <textarea id="DosageProfessional" name="DosageProfessional" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="OverDosagePatiant">
+                                Over Dosage Patiant Data
+                            </label>
+                            <textarea id="OverDosagePatiant" name="OverDosagePatiant" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="OverDosageProfessional">
+                                Over Dosage Professional Data
+                            </label>
+                            <textarea id="OverDosageProfessional" name="OverDosageProfessional" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <button class="btn btn-primary btn-block" id="saveBasicData">Save and Continue</button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="Pregnancy_Category">
-                    Pregnancy Category
-                </label>
-                <select id="Pregnancy_Category" name="Pregnancy_Category" class="form-control">
-                    <option>category 1</option>
-                    <option>category 2</option>
-                    <option>category 3</option>
-                </select>
+            <div role="tabpanel" class="tab-pane" id="sideEffectTab">
+                <div class="container" style="border:solid 1px;background-color:white;padding:5px">
+                    <h3>side Effects Added</h3>
+                    <div id="addedSideEffects">
+                        <span style="background-color:#bdc6b4;padding:3px;margin:2px">Side Effect 1 </span>
+                        <span style="background-color:#bdc6b4;padding:3px;margin:2px">Side Effect 2 </span>
+                    </div>
+                </div>
+                <div class="container">
+                    <h3>Add new Side Effect</h3>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="sideEffect">
+                                side Effect
+                            </label>
+                            <select id="sideEffect" name="sideEffect" class="form-control">
+                                <option>sideEffect 1</option>
+                                <option>sideEffect 2</option>
+                                <option>sideEffect 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="sideEffect_freqancy">
+                                Frequency
+                            </label>
+                            <select id="sideEffect_freqancy" name="sideEffect_freqancy" class="form-control">
+                                <option>freqancy 1</option>
+                                <option>freqancy 2</option>
+                                <option>freqancy 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="sideEffect_Patiant">
+                                sideEffect Patiant Data
+                            </label>
+                            <textarea id="sideEffect_Patiant" name="sideEffect_Patiant" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="sideEffect_Professional">
+                                sideEffect Professional Data
+                            </label>
+                            <textarea id="sideEffect_Professional" name="sideEffect_Professional" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <button class="btn btn-primary btn-block" id="saveSideEffect">Save and Continue</button>
+                        </div>
+                    </div>
+                </div> 
             </div>
-        </div>
-        <div class="row">
-            <div class="form-group col-md-12">
-                <label for="Pregnancy_Category">
-                    Pregnancy Category
-                </label>
-                <select id="Pregnancy_Category" name="Pregnancy_Category" class="form-control">
-                    <option>category 1</option>
-                    <option>category 2</option>
-                    <option>category 3</option>
-                </select>
+            <div role="tabpanel" class="tab-pane" id="foodInteraction">
+                <div class="container" style="border:solid 1px;background-color:white;padding:5px">
+                    <h3>Food Added</h3>
+                    <div id="addedFoods">
+                        <span style="background-color:#bdc6b4;padding:3px;margin:2px">Food 1 </span>
+                        <span style="background-color:#bdc6b4;padding:3px;margin:2px">Food 2 </span>
+                    </div>
+                </div>
+                <div class="container">
+                    <h3>Add new Food</h3>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="food">
+                                Foods
+                            </label>
+                            <select id="food" name="food" class="form-control">
+                                <option>food 1</option>
+                                <option>food 2</option>
+                                <option>food 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="food_degree">
+                                Degree
+                            </label>
+                            <select id="food_degree" name="food_degree" class="form-control">
+                                <option>degree 1</option>
+                                <option>degree 2</option>
+                                <option>degree 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="food_Patiant">
+                                 Patiant Data
+                            </label>
+                            <textarea id="food_Patiant" name="food_Patiant" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="food_Professional">
+                               Professional Data
+                            </label>
+                            <textarea id="food_Professional" name="food_Professional" class="form-control">aaaaaa</textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <button class="btn btn-primary btn-block" id="saveFood">Add Food Interaction</button>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div role="tabpanel" class="tab-pane" id="treatmentDisease">tab4</div>
+            <div role="tabpanel" class="tab-pane" id="interactionDisease">interactionDisease</div>
+            <div role="tabpanel" class="tab-pane" id="interactionSubstance">interactionSubstance</div>
         </div>
+
     </div>
+    
 </div>
+
+@section Scripts{ 
+    <script>
+        $('#saveBasicData').on('click', () => {
+            let secondaryTabs = $('.secondaryData_Tabs')
+            for (let i = 0; i < secondaryTabs.length; i++) {
+
+                secondaryTabs[i].setAttribute("data-toggle", "tab")
+                 $(secondaryTabs[i]).parent().attr('class','')
+
+            }
+            
+        })
+
+        $('#saveSideEffect').on('click', () => {
+            //TODO use Ajax to save data and get the feedback.
+            //If data save successfuly ,run next code
+            $('#addedSideEffects').append(`<span style="background-color:#bdc6b4;padding:3px;margin:2px">Side Effect 3 </span>`)
+            alert('side Effect 3 saved Correctly !!')
+        })
+
+        $('#saveFood').on('click', () => {
+            //TODO use Ajax to save data and get the feedback.
+            //If data save successfuly ,run next code
+            $('#addedFoods').append(`<span style="background-color:#bdc6b4;padding:3px;margin:2px">Food 3 </span>`)
+            alert('Food 3 saved Correctly !!')
+        })
+
+    </script>
+}
 

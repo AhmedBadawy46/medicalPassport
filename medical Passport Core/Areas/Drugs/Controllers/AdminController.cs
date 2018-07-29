@@ -18,5 +18,17 @@ namespace medical_Passport_Core.Areas.Drugs.Controllers
         {
             return View();
         }
+
+        public IActionResult DrugsIndex()
+        {
+            return View();
+        }
+
+        public IActionResult DrugDetails()
+        {
+            return View();
+        }
+
+
     }
 }

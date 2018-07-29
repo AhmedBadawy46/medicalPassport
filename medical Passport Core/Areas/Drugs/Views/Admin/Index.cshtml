@@ -4,7 +4,7 @@
 }
 <link href="~/js/DataTable/jquery.dataTables.min.css" rel="stylesheet" />
 <div class="row" style="margin:20px">
-    <a href="/Drugs/Admin/AddNewSubstance" class="btn btn-default">Add New Drug</a>
+    <a href="/Drugs/Admin/AddNewSubstance" class="btn btn-default">Add New Substance</a>
 </div>
 <div class="table-responsive">
     <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
@@ -31,13 +31,17 @@
                         <th class="text-center">
                             Interact Substance
                         </th>
-                        
+                        <th class="text-center">
+                        </th>
+                        <th class="text-center">
+                        </th>
+
                     </tr>
                 </thead>
                 <tbody id="theTbody">
                     <tr role="row">
                         <td class="text-center">
-                            Substance 1
+                            Substance 1 <br />(<a data-toggle="modal" data-target="#editMainData">En</a> -<a data-toggle="modal" data-target="#editMainData">Ar</a>)
                         </td>
                         <td class="text-center">
                             <button class="btn btn-primary sideEffect">View</button>
@@ -53,11 +57,21 @@
                         </td>
                         <td class="text-center">
                             <button class="btn btn-primary interactSubstance">View</button>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link addOtherLang" data-toggle="modal" data-target="#myModal">
+                                add other language
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link remove-Link RemoveSubstance" data-toggle="modal" data-target="#myModal">
+                                Remove
+                            </a>
                         </td>
                     </tr>
                     <tr role="row">
                         <td class="text-center">
-                            substance 2
+                            substance 2 <br />(<a data-toggle="modal" data-target="#editMainData">En</a> -<a data-toggle="modal" data-target="#editMainData">Ar</a>)
                         </td>
                         <td class="text-center">
                             <button class="btn btn-primary sideEffect">View</button>
@@ -73,6 +87,16 @@
                         </td>
                         <td class="text-center">
                             <button class="btn btn-primary interactSubstance">View</button>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link addOtherLang" data-toggle="modal" data-target="#myModal">
+                                add other language
+                            </a>
+                        </td>
+                        <td class="text-center">
+                            <a class="btn btn-link remove-Link RemoveSubstance" data-toggle="modal" data-target="#myModal">
+                                Remove
+                            </a>
                         </td>
                     </tr>
                 </tbody>
@@ -81,6 +105,232 @@
     </div>
 </div>
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Data with other Language</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Languages">
+                            Choose Language
+                        </label>
+                        <select id="Languages" name="Languages" class="form-control">
+                            <option>En</option>
+                            <option>Ar</option>
+                            <option>Fr</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Substance_Name">
+                            Substance Name
+                        </label>
+                        <input id="Substance_Name" name="Substance_Name" type="text" value="zzzz" class="form-control" />
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Ph_Patiant">
+                            Pharmacological Family Patiant Data
+                        </label>
+                        <textarea id="Ph_Patiant" name="Ph_Patiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Ph_Professional">
+                            Pharmacological Family Professional Data
+                        </label>
+                        <textarea id="Ph_Professional" name="Ph_Professional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="PregnancyPatiant">
+                            Pregnancy Patiant Data
+                        </label>
+                        <textarea id="PregnancyPatiant" name="PregnancyPatiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="PregnancyProfessional">
+                            Pregnancy Professional Data
+                        </label>
+                        <textarea id="PregnancyProfessional" name="PregnancyProfessional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="LactationPatiant">
+                            Lactation Patiant Data
+                        </label>
+                        <textarea id="LactationPatiant" name="LactationPatiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="LactationProfessional">
+                            Lactation Professional Data
+                        </label>
+                        <textarea id="LactationProfessional" name="LactationProfessional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="DosagePatiant">
+                            Dosage Patiant Data
+                        </label>
+                        <textarea id="DosagePatiant" name="DosagePatiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="DosageProfessional">
+                            Dosage Professional Data
+                        </label>
+                        <textarea id="DosageProfessional" name="DosageProfessional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="OverDosagePatiant">
+                            Over Dosage Patiant Data
+                        </label>
+                        <textarea id="OverDosagePatiant" name="OverDosagePatiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="OverDosageProfessional">
+                            Over Dosage Professional Data
+                        </label>
+                        <textarea id="OverDosageProfessional" name="OverDosageProfessional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editMainData" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit Data</h4>
+            </div>
+            <div class="modal-body">
+                
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Substance_Name">
+                            Substance Name
+                        </label>
+                        <input id="Substance_Name" name="Substance_Name" type="text" value="zzzz" class="form-control" />
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Ph_Patiant">
+                            Pharmacological Family Patiant Data
+                        </label>
+                        <textarea id="Ph_Patiant" name="Ph_Patiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Ph_Professional">
+                            Pharmacological Family Professional Data
+                        </label>
+                        <textarea id="Ph_Professional" name="Ph_Professional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="PregnancyPatiant">
+                            Pregnancy Patiant Data
+                        </label>
+                        <textarea id="PregnancyPatiant" name="PregnancyPatiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="PregnancyProfessional">
+                            Pregnancy Professional Data
+                        </label>
+                        <textarea id="PregnancyProfessional" name="PregnancyProfessional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="LactationPatiant">
+                            Lactation Patiant Data
+                        </label>
+                        <textarea id="LactationPatiant" name="LactationPatiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="LactationProfessional">
+                            Lactation Professional Data
+                        </label>
+                        <textarea id="LactationProfessional" name="LactationProfessional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="DosagePatiant">
+                            Dosage Patiant Data
+                        </label>
+                        <textarea id="DosagePatiant" name="DosagePatiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="DosageProfessional">
+                            Dosage Professional Data
+                        </label>
+                        <textarea id="DosageProfessional" name="DosageProfessional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="OverDosagePatiant">
+                            Over Dosage Patiant Data
+                        </label>
+                        <textarea id="OverDosagePatiant" name="OverDosagePatiant" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="OverDosageProfessional">
+                            Over Dosage Professional Data
+                        </label>
+                        <textarea id="OverDosageProfessional" name="OverDosageProfessional" class="form-control">aaaaaa</textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 @section Scripts{
     <script src="~/js/DataTable/jquery.dataTables.min.js"></script>
     <script src="~/js/DataTable/base_tables_datatables.js"></script>
