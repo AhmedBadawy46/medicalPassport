@@ -33,5 +33,11 @@ namespace medical_Passport_Core.Areas.Doctors.Controllers
         {
             return View("ScheduleData");
         }
+
+        public IActionResult GetApointmentsData(string facility)
+        {
+            ViewBag.facilityName = facility;
+            return PartialView("_FacilityAppointments");
+        }
     }
 }

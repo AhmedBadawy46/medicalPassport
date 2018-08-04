@@ -66,8 +66,8 @@ jQuery(document).ready(function($){
 
 		this.singleEvents.each(function(){
 			//create the .event-date element for each event
-			//var durationLabel = '<span class="event-date">'+$(this).data('start')+' - '+$(this).data('end')+'</span>';
-			//$(this).children('a').prepend($(durationLabel));
+			var durationLabel = '<span class="event-date">'+$(this).data('start')+' - '+$(this).data('end')+'</span>';
+			$(this).children('a').prepend($(durationLabel));
 
 			//detect click on the event and open the modal
 			$(this).on('click', 'a', function(event){
@@ -116,10 +116,12 @@ jQuery(document).ready(function($){
 		this.modal.attr('data-event', event.parent().attr('data-event'));
 
 		//update event content
-		this.modalBody.find('.event-info').load(event.parent().attr('data-content')+'.html .event-info > *', function(data){
+        this.modalBody.find('.event-info').load('/Doctors/Profile/GetApointmentsData', {facility:'facility 1'}, function(data){
 			//once the event content has been loaded
 			self.element.addClass('content-loaded');
 		});
+        //this.modalBody.find('.event-info').text("hello");
+        //self.element.addClass('content-loaded');
 
 		this.element.addClass('modal-is-open');
 

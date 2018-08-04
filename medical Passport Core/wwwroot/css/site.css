@@ -63,3 +63,15 @@ body {
     color: #cc4e4e;
 }
 
+.not-active {
+    background-color: #ffc0c0 !important;
+}
+
+.not-approved {
+    color: #e23030 !important;
+}
+.approved {
+    color: #616BEA !important;
+}
+
+

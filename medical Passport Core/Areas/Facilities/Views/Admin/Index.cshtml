@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row" style="margin:20px">
+    <a class="btn btn-default addNewFacility" data-toggle="modal" data-target="#addNewFacilityModal">
+        Add New Facility
+    </a>
+</div>
+
+<div class="modal fade" id="addNewFacilityModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add New Facility</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="facility_type">
+                            Choose Type
+                        </label>
+                        <select id="facility_type" name="facility_type" class="form-control">
+                            <option>Clinic</option>
+                            <option>Hospital</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="facility_address">
+                            Address
+                        </label>
+                        <textarea id="facility_address" name="facility_address" class="form-control" placeholder="address"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="facility_phones">
+                            Phones
+                        </label>
+                        <input id="facility_phones" name="facility_phones" type="text" placeholder="eg:0123456789" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Is24H">
+                            Is 24 Hours
+                        </label>
+                        @Html.CheckBox("Is24H")
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="facility_name">
+                            Name (En)
+                        </label>
+                        <input id="facility_name" name="facility_name" type="text" placeholder="eg:Health Clinic" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="startTime">
+                            start
+                        </label>
+                        <input id="startTime" name="startTime" type="date" class="form-control" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="endTime">
+                            End
+                        </label>
+                        <input id="endTime" name="endTime" type="date" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Facility 1(Clinic) <i class="fa fa-check-circle approved"></i>
+                <a class="pull-right activate" data-active="1">De-Activate</a>
+            </div>
+            <div class="panel-body">
+                <b>Facility Names(languages) :</b> En - Ar <br />
+                <b>Tel:</b> 01234567890 <br />
+                <b>Web Site:</b> www.facility1.com <br />
+                <b>Address :</b> Cairo <br />
+                <b>Is 24 hours :</b> Yes <br />
+                <b>start :</b> 10 AM <br />
+                <b>end :</b> 10 PM <br />
+                <button class="btn btn-default pull-right">Manage Facility</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading not-active">
+                Facility 2 (Hospital) <i class="fa fa-times-circle not-approved"></i>
+                <a class="pull-right activate" data-active="0">Activate</a>
+            </div>
+            <div class="panel-body">
+                <b>Facility Names(languages) :</b> En - Ar <br />
+                <b>Tel:</b> 01234567890 <br />
+                <b>Web Site:</b> www.facility2.com <br />
+                <b>Address :</b> Cairo <br />
+                <b>Is 24 hours :</b> Yes <br />
+                <b>start :</b> 10 AM <br />
+                <b>end :</b> 10 PM <br />
+                <button class="btn btn-default pull-right">Manage Facility</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Facility 3 (Hospital) <i class="fa fa-times-circle not-approved"></i>
+                <a class="pull-right activate" data-active="1">De-Activate</a>
+
+            </div>
+            <div class="panel-body">
+                <b>Facility Names(languages) :</b> En - Ar <br />
+                <b>Tel:</b> 01234567890 <br />
+                <b>Web Site:</b> www.facility3.com <br />
+                <b>Address :</b> Cairo <br />
+                <b>Is 24 hours :</b> Yes <br />
+                <b>start :</b> 10 AM <br />
+                <b>end :</b> 10 PM <br />
+                <button class="btn btn-default pull-right">Manage Facility</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading not-active">
+                Facility 4 (clinic) <i class="fa fa-check-circle approved"></i>
+                <a class="pull-right activate" data-active="0">Activate</a>
+            </div>
+            <div class="panel-body">
+                <b>Facility Names(languages) :</b> En - Ar <br />
+                <b>Tel:</b> 01234567890 <br />
+                <b>Web Site:</b> www.facility4.com <br />
+                <b>Address :</b> Cairo <br />
+                <b>Is 24 hours :</b> Yes <br />
+                <b>start :</b> 10 AM <br />
+                <b>end :</b> 10 PM <br />
+                <button class="btn btn-default pull-right">Manage Facility</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+    <script>
+        $('.activate').click((e) => {
+            e.preventDefault()
+            let clicked_link = $(e.target)
+            console.log(clicked_link.data('active'))
+            if (clicked_link.data('active') == 0) {
+                clicked_link.data('active', 1) 
+                clicked_link.parent().removeClass('not-active')
+                clicked_link.text('De-Activate')
+
+            } else {
+                clicked_link.data('active', 0)
+                clicked_link.parent().addClass('not-active')
+                clicked_link.text('Activate')
+            }
+        })
+    </script>
+}

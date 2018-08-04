@@ -15,6 +15,8 @@
     <Folder Include="Areas\Doctors\Models\" />
     <Folder Include="Areas\Drugs\Data\" />
     <Folder Include="Areas\Drugs\Models\" />
+    <Folder Include="Areas\Facilities\Data\" />
+    <Folder Include="Areas\Facilities\Models\" />
     <Folder Include="Areas\Profile\Data\" />
     <Folder Include="Areas\Profile\Models\" />
   </ItemGroup>
@@ -31,6 +33,12 @@
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\Drugs\Views\_ViewStart.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Facilities\Views\_ViewImports.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Areas\Facilities\Views\_ViewStart.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\Profile\Views\_ViewImports.cshtml">
