@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Index";
 }
+@***********************start Add new Facility Modal****************************@
 <div class="row" style="margin:20px">
     <a class="btn btn-default addNewFacility" data-toggle="modal" data-target="#addNewFacilityModal">
         Add New Facility
@@ -83,6 +84,7 @@
         </div>
     </div>
 </div>
+@***********************End Add new Facility Modal****************************@
 
 <div class="row">
     <div class="col-md-6">
@@ -99,7 +101,7 @@
                 <b>Is 24 hours :</b> Yes <br />
                 <b>start :</b> 10 AM <br />
                 <b>end :</b> 10 PM <br />
-                <button class="btn btn-default pull-right">Manage Facility</button>
+                <a href="/Facilities/Admin/ManageFacility" class="btn btn-default pull-right">Manage Facility</a>
             </div>
         </div>
     </div>
@@ -117,7 +119,7 @@
                 <b>Is 24 hours :</b> Yes <br />
                 <b>start :</b> 10 AM <br />
                 <b>end :</b> 10 PM <br />
-                <button class="btn btn-default pull-right">Manage Facility</button>
+                <a href="/Facilities/Admin/ManageFacility" class="btn btn-default pull-right">Manage Facility</a>
             </div>
         </div>
     </div>
@@ -139,7 +141,7 @@
                 <b>Is 24 hours :</b> Yes <br />
                 <b>start :</b> 10 AM <br />
                 <b>end :</b> 10 PM <br />
-                <button class="btn btn-default pull-right">Manage Facility</button>
+                <a href="/Facilities/Admin/ManageFacility" class="btn btn-default pull-right">Manage Facility</a>
             </div>
         </div>
     </div>
@@ -157,20 +159,20 @@
                 <b>Is 24 hours :</b> Yes <br />
                 <b>start :</b> 10 AM <br />
                 <b>end :</b> 10 PM <br />
-                <button class="btn btn-default pull-right">Manage Facility</button>
+                <a href="/Facilities/Admin/ManageFacility" class="btn btn-default pull-right">Manage Facility</a>
             </div>
         </div>
     </div>
 </div>
 
-@section Scripts{ 
+@section Scripts{
     <script>
         $('.activate').click((e) => {
             e.preventDefault()
             let clicked_link = $(e.target)
             console.log(clicked_link.data('active'))
             if (clicked_link.data('active') == 0) {
-                clicked_link.data('active', 1) 
+                clicked_link.data('active', 1)
                 clicked_link.parent().removeClass('not-active')
                 clicked_link.text('De-Activate')
 

@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewData["Title"] = "ManageFacility";
+}
+<link href="~/lib/trees/Treant.css" rel="stylesheet" />
+
+<style>
+    .lastNode {
+        border: 1px solid black;
+        padding: 2px 2px 2px 2px;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #c2f1db;
+        border-radius: 4px;
+    }
+
+    .Treant .collapse-switch {
+        display: none;
+    }
+</style>
+
+<a class="btn btn-default addNewDepartment" data-toggle="modal" data-target="#addNewDepartmetModal">
+    Add New Department
+</a>
+<div class="modal fade" id="addNewDepartmetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add New Department</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <label for="Department">
+                            Choose Department
+                        </label>
+                        <select id="Department" name="Department" class="form-control">
+                            <option>Depart 1</option>
+                            <option>Depart 2</option>
+                            <option>Depart 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" id="addDepart">addDepart</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="tree-simple" class="row"> </div>
+
+@section Scripts{
+    <script src="~/lib/trees/raphael.js"></script>
+    <script src="~/lib/trees/Treant.js"></script>
+    <script src="~/lib/trees/jquery.easing.js"></script>
+    <script>
+        let departments = [
+            {
+                text: { name: "Depart 1" },
+                stackChildren: true,
+                children: [
+                    {
+                        text: { name: "First child" },
+                        HTMLclass: "lastNode",
+                        link: {
+                            href: "/Home/Index"
+                        },
+                    },
+                    {
+                        text: { name: "Second child" },
+                        HTMLclass: "lastNode",
+                        link: {
+                            href: "/Home/Index"
+                        },
+                    },
+                    {
+                        text: { name: "Second child" },
+                        HTMLclass: "lastNode",
+                        link: {
+                            href: "/Home/Index"
+                        },
+                    },
+                    {
+                        text: { name: "Second child" },
+                        HTMLclass: "lastNode",
+                        link: {
+                            href: "/Home/Index"
+                        },
+                    }
+                ]
+            },
+            {
+                text: { name: "Depart 2" },
+                children: [
+                    {
+                        text: { name: "First child" }
+                    },
+                    {
+                        text: { name: "Second child" }
+                    },
+                    {
+                        text: { name: "Second child" }
+                    },
+                    {
+                        text: { name: "Second child" }
+                    }
+                ]
+            },
+            {
+                text: { name: "Depart 3" }
+            },
+            {
+                text: { name: "Depart 4" }
+            },
+            {
+                text: { name: "Depart 5" }
+            },
+            {
+                text: { name: "Depart 6" }
+            },
+            {
+                text: { name: "Depart 7" }
+            }
+        ]
+
+        let initializeTreeChart = () => {
+            let simple_chart_config = {
+                chart: {
+                    container: "#tree-simple",
+                    connectors: {
+                        type: "step",
+                        style: {
+                            stroke: 'black',
+                            "arrow-end": "open"
+
+                        }
+                    },
+                    animation: {
+                        nodeAnimation: "easeInCubic"
+                    }
+                },
+                nodeStructure: {
+                    text: { name: "Facility Name" },
+                    children: []
+                }
+            };
+            departments.forEach((e) => {
+                simple_chart_config.nodeStructure.children.push(e)
+            })
+            var chart = new Treant(simple_chart_config/*, function () { alert('Tree Loaded') }, $*/);
+        }
+
+        $("#addDepart").click(() => {
+            $('#addNewDepartmetModal').modal('hide')
+            $('#tree-simple').empty()
+            departments.push({
+                text: { name: "Depart 1234" }
+            })
+            initializeTreeChart()
+        })
+
+        initializeTreeChart()
+    </script>
+}
+
+

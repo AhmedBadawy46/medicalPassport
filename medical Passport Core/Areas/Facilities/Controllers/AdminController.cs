@@ -13,5 +13,10 @@ namespace medical_Passport_Core.Areas.Facilities.Controllers
         {
             return View();
         }
+
+        public IActionResult ManageFacility()
+        {
+            return View();
+        }
     }
 }
